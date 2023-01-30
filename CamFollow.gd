@@ -12,6 +12,7 @@ onready var cam = get_node("Camera")
 func _ready():
 	print("Target: ", target.global_translation)
 	print("Camera: ", cam.global_translation)
+
 	# pass # Replace with function body.
 
 

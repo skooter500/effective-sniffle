@@ -1,6 +1,6 @@
 extends Spatial
 
-export var speed = 5.0
+export var speed = 2.0
 export var rotSpeed = 5.0
 
 

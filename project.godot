@@ -10,9 +10,13 @@ config_version=4
 
 [application]
 
-config/name="Experiments2"
+config/name="GodotBoids"
 run/main_scene="res://experiments2.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+DebugDraw="*res://addons/debug_draw_3d/debug_draw.gd"
 
 [gui]
 
