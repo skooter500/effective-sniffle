@@ -1,6 +1,6 @@
 extends Spatial
 
-onready var target = get_node("Box/target")
+onready var target = get_node("tank/target")
 onready var cam = get_node("Camera")
 
 # Declare member variables here. Examples:

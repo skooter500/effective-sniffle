@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Box.gd" type="Script" id=1]
 [ext_resource path="res://CamFollow.gd" type="Script" id=2]
 [ext_resource path="res://Ground.tres" type="Material" id=3]
 [ext_resource path="res://Tank Material.tres" type="Material" id=4]
 [ext_resource path="res://Bullet.gd" type="Script" id=5]
+[ext_resource path="res://Pyramid.gd" type="Script" id=6]
 
 [sub_resource type="Environment" id=5]
 background_mode = 1
@@ -22,6 +23,8 @@ ssao_enabled = true
 
 [sub_resource type="CubeMesh" id=7]
 
+[sub_resource type="PrismMesh" id=8]
+
 [node name="Spatial" type="Spatial"]
 script = ExtResource( 2 )
 
@@ -31,23 +34,24 @@ environment = SubResource( 5 )
 current = true
 near = 0.01
 far = 10000.0
+script = ExtResource( 2 )
 
-[node name="Box" type="MeshInstance" parent="."]
+[node name="tank" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 mesh = SubResource( 1 )
 material/0 = ExtResource( 4 )
 script = ExtResource( 1 )
 rotSpeed = 3.0
 
-[node name="target" type="Spatial" parent="Box"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, -22.3167 )
+[node name="target" type="Spatial" parent="tank"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 10 )
 
-[node name="Turret" type="MeshInstance" parent="Box"]
+[node name="Turret" type="MeshInstance" parent="tank"]
 transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 2, 0, 1.25, 0.995 )
 mesh = SubResource( 6 )
 material/0 = ExtResource( 4 )
 
-[node name="Spatial" type="Spatial" parent="Box/Turret"]
+[node name="Spatial" type="Spatial" parent="tank/Turret"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.1922 )
 
 [node name="Ground" type="MeshInstance" parent="."]
@@ -63,3 +67,9 @@ shadow_enabled = true
 mesh = SubResource( 7 )
 material/0 = ExtResource( 4 )
 script = ExtResource( 5 )
+
+[node name="pyr" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.7358, 4.85893, 9.5777 )
+mesh = SubResource( 8 )
+script = ExtResource( 6 )
+speed = 20.0
