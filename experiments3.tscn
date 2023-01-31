@@ -37,7 +37,6 @@ transform = Transform( 0.707107, 0.5, -0.5, 0, 0.707107, 0.707107, 0.707107, -0.
 shadow_enabled = true
 
 [node name="Boid" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.47121, 0 )
 script = ExtResource( 2 )
 maxSpeed = 20.0
 targetNode = NodePath("../target")
@@ -49,5 +48,5 @@ mesh = SubResource( 6 )
 skeleton = NodePath("../..")
 
 [node name="target" type="Position3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -15.614 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20 )
 script = ExtResource( 1 )
