@@ -33,20 +33,21 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):		
-	
-	var turn = Input.get_axis("move_left", "move_right")
+	# rotate_y(0.1)
+	var turn = Input.get_axis("turn_left", "turn_right")
 	DebugDraw.set_text("turn: ", str(turn))
 	
 	if abs(turn) > 0:     
-		rotation.y += rotSpeed * delta * turn
+		# rotate()
+		rotation.y -= rotSpeed * delta * turn
 	
-	
+	# rotate_y(0.1)
+	# rotate_x(0.1)
 	var move = Input.get_axis("move_forward", "move_back")
 	DebugDraw.set_text("move: ", str(move))
 	
 	if abs(move) > 0:     		
 		translate(Vector3.FORWARD * speed * delta * move)		
-	
 	_drawGizmos()
 	
 	

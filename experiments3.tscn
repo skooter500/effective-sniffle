@@ -53,3 +53,5 @@ script = ExtResource( 1 )
 
 [node name="Spatial" type="Spatial" parent="."]
 script = ExtResource( 3 )
+width = null
+height = null

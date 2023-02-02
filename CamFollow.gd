@@ -20,6 +20,6 @@ func _ready():
 func _process(delta):
 	
 	# transform.origin += transform.basis.z
-	cam.global_translation = lerp(cam.global_translation, target.global_translation, delta)
-	cam.look_at(cam.get_parent_spatial().global_translation, Vector3.UP)
+	cam.global_translation = lerp(cam.global_translation, target.global_translation, delta * 5)
+	cam.look_at(target.get_parent_spatial().global_translation, Vector3.UP)
 	# pass
